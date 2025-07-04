@@ -9,7 +9,6 @@ const MainLayout = () => {
 
         <div className="Outlet">
           <Outlet />
-          <Tasks />
         </div>
       </div>
     </>

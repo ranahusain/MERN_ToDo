@@ -1,5 +1,5 @@
 /* * {
-  outline: 1px solid red; 
+  outline: 1px solid red;
   box-sizing: border-box;
 } */
 
@@ -67,6 +67,11 @@ body {
   margin: 0;
 }
 
+.tasks {
+  width: 30rem;
+  margin: auto;
+}
+
 .tasks input {
   padding: 10px;
   border-radius: 8px;
@@ -74,6 +79,7 @@ body {
   margin-right: 10px;
   width: 250px;
   font-size: 16px;
+  width: 20rem;
 }
 
 .tasks button {
@@ -94,9 +100,7 @@ body {
   color: rgb(33, 94, 194);
   margin: auto;
 }
-.task-input {
-  padding-left: 20rem;
-}
+
 input::placeholder {
   font-family: sans-serif;
   font-weight: 550;
