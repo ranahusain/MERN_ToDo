@@ -1,21 +1,21 @@
 import "../App.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <>
       <div class="sidebar">
         <div class="buttons">
-          <NavLink to="/alltodo">All Task</NavLink>
+          <Link to="/alltodo">All Task</Link>
           <hr />
-          <NavLink to="/addtodo">Add Task</NavLink>
+          <Link to="/addtodo">Add Task</Link>
           <hr />
-          <NavLink to="/todos/done">Done Task</NavLink>
+          <Link to="/todo/done">Done </Link>
           <hr />
-          <NavLink to="/todos/undone">UnDone Task</NavLink>
+          <Link to="/todo/undone">UnDone</Link>
           <hr />
-          <NavLink to="/update/todo/:id">Update Task</NavLink>
+          <Link to="/update/todo/:id">Update </Link>
           <hr />
-          <NavLink to="/deletetodo/:id">Delete Task</NavLink>
+          <Link to="/delete/todo/:id">Delete </Link>
           <hr />
         </div>
       </div>
