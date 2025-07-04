@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ToDo = require("../models/ToDoModel");
 
-router.delete("/todos/:id", async (req, res) => {
+router.delete("/deletetodo/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const deleteTask = await ToDo.findByIdAndDelete(id);

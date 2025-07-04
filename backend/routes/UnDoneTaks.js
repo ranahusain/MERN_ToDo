@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ToDo = require("../models/ToDoModel");
 
-router.get("/todos/undone", async (req, res) => {
+router.get("/todo/undone", async (req, res) => {
   try {
     const ToDos = await ToDo.find({ completed: false });
     res.status(200).json(ToDos);

@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ToDo = require("../models/ToDoModel");
 
-router.put("/todos/:id", async (req, res) => {
+router.put("/update/todo/:id", async (req, res) => {
   const { id } = req.params;
   const { task, completed } = req.body;
   try {

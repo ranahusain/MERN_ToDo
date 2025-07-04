@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ToDo = require("../models/ToDoModel");
 
-router.post("/todos", async (req, res) => {
+router.post("/addtodo", async (req, res) => {
   try {
     const { task, completed } = req.body;
     const newTask = new ToDo({ task, completed });
