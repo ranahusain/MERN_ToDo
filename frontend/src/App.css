@@ -1,42 +1,111 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background: #000000;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(75, 84, 94, 1) 100%
+  );
+  font-family: sans-serif;
+}
+
+.main-container {
+  display: flex;
+  width: 80%;
+  height: 80vh;
+  background-color: rgb(0, 0, 0);
+  border-radius: 1rem;
+  margin: auto;
+  margin-top: 7vh;
+}
+
+.sidebar {
+  width: 30%;
+  background-color: rgb(33, 34, 34);
+  height: 100%;
+  border-radius: 0.8rem;
+
+  /* Flex to center .buttons vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-right: 2rem;
+}
+
+.buttons a {
+  padding: 9px 32px;
+  font-size: 16px;
+  /* background-color: rgb(33, 94, 194); */
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  min-width: 150px; /* Use min-width instead of percentage for better centering */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.buttons a:hover {
+  background-color: white;
+  color: rgb(33, 94, 194);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.tasks {
+  width: 70%;
+  background-color: rgb(8, 6, 6);
+  height: 90%;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2rem;
 }
 
-.card {
-  padding: 2em;
+.tasks input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
+  width: 250px;
+  font-size: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+.tasks button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(33, 94, 194);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: large;
+  font-weight: lighter;
+}
+
+.tasks button:hover {
+  background-color: white;
+  color: rgb(33, 94, 194);
+}
+
+input::placeholder {
+  font-family: sans-serif;
+  font-weight: 550;
+  font-style: italic;
 }

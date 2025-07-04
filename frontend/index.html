@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/App.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List App</title>
   </head>
   <body>
     <div id="root"></div>
+    <div class="main-container">
+      <div class="sidebar">
+        <div class="buttons">
+          <a href="#">All Task</a>
+          <hr />
+          <a href="#">Add Task</a>
+          <hr />
+          <a href="#">Done Task</a>
+          <hr />
+          <a href="#">UnDone Task</a>
+          <hr />
+          <a href="#">Update Task</a>
+          <hr />
+          <a href="#">Delete Task</a>
+          <hr />
+        </div>
+      </div>
+      <div class="tasks">
+        <div class="task-input">
+          <input type="text" placeholder="Enter task..." />
+          <button>+</button>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
