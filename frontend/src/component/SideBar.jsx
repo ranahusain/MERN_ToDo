@@ -1,21 +1,38 @@
 import "../App.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const SideBar = () => {
+  const linkclass = ({ isActive }) =>
+    isActive
+      ? " text-black bg-blue-500 hover:bg-white-900 hover:text-white rounded-md px-3 py-2"
+      : " text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 ";
+
   return (
     <>
       <div className="sidebar">
         <div className="buttons">
-          <Link to="/alltodo">All Task</Link>
+          <NavLink to="/alltodo" className={linkclass}>
+            All Task
+          </NavLink>
           <hr />
-          <Link to="/addtodo">Add Task</Link>
+          <NavLink to="/addtodo" className={linkclass}>
+            Add Task
+          </NavLink>
           <hr />
-          <Link to="/todo/done">Done </Link>
+          <NavLink to="/todo/done" className={linkclass}>
+            Done{" "}
+          </NavLink>
           <hr />
-          <Link to="/todo/undone">UnDone</Link>
+          <NavLink to="/todo/undone" className={linkclass}>
+            UnDone
+          </NavLink>
           <hr />
-          <Link to="/update/todo/:id">Update </Link>
+          <NavLink to="/update/todo/:id" className={linkclass}>
+            Update{" "}
+          </NavLink>
           <hr />
-          <Link to="/delete/todo/:id">Delete </Link>
+          <NavLink to="/delete/todo/:id" className={linkclass}>
+            Delete{" "}
+          </NavLink>
           <hr />
         </div>
       </div>

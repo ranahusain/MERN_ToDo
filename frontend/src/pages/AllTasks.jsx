@@ -68,6 +68,7 @@ const AllTasks = () => {
                 <input
                   type="checkbox"
                   className="task-check"
+                  defaultChecked={task.completed}
                   onChange={async (e) => {
                     const completed = e.target.checked;
 
