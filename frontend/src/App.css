@@ -117,13 +117,14 @@ input::placeholder {
 
 .task-card {
   background-color: #2e2e2e;
-  border-left: 6px solid #6194fb;
+  border-left: 6px solid #2568e5;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease;
   margin: 1rem;
+  display: flex;
 }
 
 .task-card:hover {
@@ -134,4 +135,16 @@ input::placeholder {
   font-size: 1.1rem;
   margin: 0;
   font-weight: 500;
+}
+
+.seventyperc {
+  width: 90%;
+}
+.thirtyper {
+  width: 10%;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

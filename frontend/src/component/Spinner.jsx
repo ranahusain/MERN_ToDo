@@ -1,18 +1,18 @@
-import { BeatLoader } from "react-spinners";
+import { ClipLoader } from "react-spinners";
 
 const override = {
   display: "block",
-  margin: "20vh auto",
+  margin: "30vh auto",
 };
 
 const Spinner = ({ loading }) => {
   return (
     <>
-      <BeatLoader
+      <ClipLoader
         color={"white"}
         loading={loading}
         cssOverride={override}
-        size={80}
+        size={50}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
