@@ -30,8 +30,6 @@ router.get("/alltodo", async (req, res) => {
     const totalValue = await ToDo.countDocuments();
     const ToDos = await ToDo.find().skip(skip).limit(limit);
 
-    // res.status(200).json({ totalValue, data: ToDos });
-
     return res.send({ totalValue, data: ToDos });
   } catch (error) {
     res.status(500).json({

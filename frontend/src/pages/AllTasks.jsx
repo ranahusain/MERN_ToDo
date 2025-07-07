@@ -12,6 +12,7 @@ const AllTasks = () => {
   const [document, setDocument] = useState();
 
   const fetchTasks = async () => {
+    setLoading(true);
     try {
       const res = await axios.get(
         `http://localhost:5000/api/alltodo/?page=${page}&limit=8`
@@ -27,7 +28,7 @@ const AllTasks = () => {
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      }, 500);
     }
   };
 
@@ -47,7 +48,7 @@ const AllTasks = () => {
                 <p className="task-text">{task.task}</p>
               </div>
               <div className="thirtyper">
-                <button className="task-button">Hello</button>
+                <input type="checkbox" className="task-check" />
               </div>
             </div>
           ))}
@@ -64,8 +65,8 @@ const AllTasks = () => {
               borderColor: "white",
             },
             "& .Mui-selected": {
-              backgroundColor: "#2568e5",
-              color: "white",
+              backgroundColor: "lightgray",
+              color: "black",
             },
           }}
           onChange={(e, v) => {
