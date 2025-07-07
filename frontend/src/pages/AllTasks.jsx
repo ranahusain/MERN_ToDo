@@ -36,6 +36,22 @@ const AllTasks = () => {
     fetchTasks();
   }, [page]);
 
+  //================================ UPDATING STATUS ==============================================================//
+
+  const updateStatus = async (id, newTask) => {
+    try {
+      const res = await axios.put(
+        `http://localhost:5000/api/update/todo/${id}`,
+        newTask
+      );
+      return res.data;
+    } catch (error) {
+      console.error("Error in updating task", error);
+    }
+  };
+
+  //=========================================================================================//
+
   return (
     <>
       {loading ? (
@@ -48,7 +64,29 @@ const AllTasks = () => {
                 <p className="task-text">{task.task}</p>
               </div>
               <div className="thirtyper">
-                <input type="checkbox" className="task-check" />
+                {/* ---------------------- ALL LOGIC OF UPDATING --------------------- */}
+                <input
+                  type="checkbox"
+                  className="task-check"
+                  onChange={async (e) => {
+                    const completed = e.target.checked;
+
+                    try {
+                      const result = await updateStatus(task._id, {
+                        completed,
+                      });
+                      if (result.success) {
+                        console.log("Status Change");
+                        toast.success("Task Updated Successfully !");
+                      } else {
+                        toast.error("Error in Updating Task!");
+                      }
+                    } catch (error) {
+                      console.error(error);
+                    }
+                  }}
+                />
+                {/* ----------------------------------------------------------------- */}
               </div>
             </div>
           ))}
@@ -62,11 +100,6 @@ const AllTasks = () => {
           sx={{
             "& .MuiPaginationItem-root": {
               color: "white",
-              borderColor: "white",
-            },
-            "& .Mui-selected": {
-              backgroundColor: "lightgray",
-              color: "black",
             },
           }}
           onChange={(e, v) => {
