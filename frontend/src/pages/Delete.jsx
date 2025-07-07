@@ -69,7 +69,7 @@ const Delete = () => {
                   className="bg-red-600 hover:bg-white hover:text-red-600 text-white font-bold py-0.5 px-2 rounded-4xl w-full focus:outline-none focus:shadow-outline block cursor-pointer"
                   onClick={() => onDeleteClick(task._id)}
                 >
-                  X
+                  Delete
                 </button>
                 {/* ----------------------------------------------------------------- */}
               </div>

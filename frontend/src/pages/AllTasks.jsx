@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../component/Spinner";
 import Pagination from "@mui/material/Pagination";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 // const url = "http://localhost:5000/api/alltodo/";
 const AllTasks = () => {
@@ -10,12 +11,13 @@ const AllTasks = () => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [document, setDocument] = useState();
+  const navigate = useNavigate();
 
   const fetchTasks = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/alltodo/?page=${page}&limit=8`
+        `http://localhost:5000/api/alltodo/?page=${page}&limit=6`
       );
       const data = res.data;
       console.log(data);
@@ -87,7 +89,16 @@ const AllTasks = () => {
                     }
                   }}
                 />
+
                 {/* ----------------------------------------------------------------- */}
+              </div>
+              <div className="button-update">
+                <button
+                  className="bg-blue-500 hover:bg-white hover:text-blue-600 text-white font-bold py-0.5 px-2 rounded-4xl w-full focus:outline-none focus:shadow-outline block cursor-pointer"
+                  onClick={() => navigate(`/update/todo/${task._id}`)}
+                >
+                  &#9997;
+                </button>
               </div>
             </div>
           ))}
@@ -97,7 +108,7 @@ const AllTasks = () => {
       <div className="pagination">
         <Pagination
           // count={Math.ceil(localStorage.getItem("totalvalue") / 8)}
-          count={Math.ceil(document / 8)}
+          count={Math.ceil(document / 6)}
           sx={{
             "& .MuiPaginationItem-root": {
               color: "white",

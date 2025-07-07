@@ -142,7 +142,11 @@ input::placeholder {
   width: 90%;
 }
 .thirtyper {
-  width: 10%;
+  width: 5%;
+}
+
+.button-update {
+  width: 5%;
 }
 .pagination {
   display: flex;
