@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <>
-      <div class="sidebar">
-        <div class="buttons">
+      <div className="sidebar">
+        <div className="buttons">
           <Link to="/alltodo">All Task</Link>
           <hr />
           <Link to="/addtodo">Add Task</Link>
