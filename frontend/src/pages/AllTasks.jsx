@@ -7,12 +7,11 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 const AllTasks = () => {
   const [task, setTask] = useState([]);
-  const [eachtask, setEachTask] = useState([]);
   const [query, setQuery] = useState("");
-
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [document, setDocument] = useState();
+
   const navigate = useNavigate();
 
   const fetchTasks = async () => {

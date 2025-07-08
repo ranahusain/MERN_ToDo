@@ -14,6 +14,7 @@ const Tasks = ({ AddTask }) => {
       console.log("response from add task", result);
       if (result.success) {
         toast.success("Task Added Successfully !");
+        setTask("");
       } else {
         toast.error("Error in Adding Task !");
       }
