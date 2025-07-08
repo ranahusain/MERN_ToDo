@@ -15,7 +15,7 @@ const Delete = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/alltodo/?page=${page}&limit=8`
+        `http://localhost:5000/api/alltodo/?page=${page}&limit=6`
       );
       const data = res.data;
       console.log(data);
@@ -81,7 +81,7 @@ const Delete = () => {
       <div className="pagination">
         <Pagination
           // count={Math.ceil(localStorage.getItem("totalvalue") / 8)}
-          count={Math.ceil(document / 8)}
+          count={Math.ceil(document / 6)}
           sx={{
             "& .MuiPaginationItem-root": {
               color: "white",
