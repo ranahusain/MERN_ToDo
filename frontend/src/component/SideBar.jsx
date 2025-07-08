@@ -34,6 +34,10 @@ const SideBar = () => {
             Delete{" "}
           </NavLink>
           <hr />
+          {/* <NavLink to="/todo/search" className={linkclass}>
+            Search{" "}
+          </NavLink> 
+          <hr />*/}
         </div>
       </div>
     </>

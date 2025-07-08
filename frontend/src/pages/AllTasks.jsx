@@ -5,9 +5,11 @@ import Spinner from "../component/Spinner";
 import Pagination from "@mui/material/Pagination";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
-// const url = "http://localhost:5000/api/alltodo/";
 const AllTasks = () => {
   const [task, setTask] = useState([]);
+  const [eachtask, setEachTask] = useState([]);
+  const [query, setQuery] = useState("");
+
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [document, setDocument] = useState();
@@ -17,7 +19,7 @@ const AllTasks = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/alltodo/?page=${page}&limit=6`
+        `http://localhost:5000/api/alltodo/?page=${page}&limit=6&query=${query}`
       );
       const data = res.data;
       console.log(data);
@@ -36,7 +38,7 @@ const AllTasks = () => {
 
   useEffect(() => {
     fetchTasks();
-  }, [page]);
+  }, [page, query]);
 
   //================================ UPDATING STATUS ==============================================================//
 
@@ -53,9 +55,18 @@ const AllTasks = () => {
   };
 
   //=========================================================================================//
-
   return (
     <>
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Search Here....."
+        className="w-full max-w-md px-4 py-2 mt-5 mx-auto border border-gray-300 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        onChange={(e) => {
+          setQuery(e.target.value.toLowerCase());
+        }}
+      />
       {loading ? (
         <Spinner loading={loading} />
       ) : (

@@ -83,6 +83,11 @@ body {
   width: 20rem;
 }
 
+input {
+  background-color: #fff;
+  color: #2e2e2e;
+}
+
 .tasks button {
   padding: 10px 20px;
   border-radius: 8px;
