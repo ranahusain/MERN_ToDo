@@ -1,0 +1,7 @@
+CREATE DATABASE perntodo;
+
+CREATE TABLE todo(
+  _id SERIAL PRIMARY KEY,
+  task VARCHAR(50) NOT NULL,
+  completed BOOLEAN DEFAULT FALSE,
+);
