@@ -1,6 +1,6 @@
 ﻿## MERN TO DO List App with CRUD Operations
 
-﻿### ✅ A todo app with full CRUD features using the MERN stack
+✅ A todo app with full CRUD features using the MERN stack
 Add tasks update them delete them mark as done or undone
 All data is saved in MongoDB using RESTful APIs
 You can even search tasks in real time
